@@ -1,0 +1,20 @@
+ {% extends "phone_book.html" %} {% block content %}
+<form action="/index/" method="post">{% csrf_token %}
+    <input type="text" name="name">
+    <input type="Add Contact" name="contact_number">
+    <input type="submit" value="Submit">
+</form>
+
+<form>
+    <label for="Name">{{contactlist.contactlist}} </label><br>{% csrf_token %}
+
+    <!-- <input type="text" id="fname" name="fname"><br> -->
+
+</form>
+
+<form action="/index/" method="post">{% csrf_token %}
+    <input type="submit" value="Delete">
+    <!-- <form action="updateTodoItem/{{i.id}}" method="post"> -->
+
+    <button type="submit">View All</button> </form>{% csrf_token %}
+<a href="/index/">view_all</a> {% endblock %}

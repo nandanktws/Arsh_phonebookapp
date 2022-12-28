@@ -1,0 +1,9 @@
+{% extends "view_phonebook.html" %} {% block content %} {% for list in Contact_list %}
+<form action="/index/" method="POST">{% csrf_token %}
+    <input type="text" name="name">
+    <input type="Add Contact" name="contact_number">
+    <input type="submit" value="Submit">
+    <td>{{list.name}}</td>
+    <td>{{list.contact_number}}</td>
+</form>
+{% endblock %}

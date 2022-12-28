@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Welcome</title>
+</head>
+
+<body>
+    {% block content %}
+    <form action="/index/" method="post">{% csrf_token %}
+        <input type="text" name="Name">
+        <input type="Add Contact" name="Contact_number">
+        <input type="submit" value="Submit">
+    </form>
+
+    <ul>
+        {% for contactlist in contactlist %}
+        <li>{{i.content}}
+
+            <form action="/add_contact/" method="post">{% csrf_token %}
+                <input type="submit" value="Delete"> {% csrf_token %}
+                <button onclick="location.href = '/view_all_contact/'">view</button>
+            </form>
+        </li>
+        {% endfor %}
+
+    </ul>
+</body>
+
+</html>
+{% endblock %}
